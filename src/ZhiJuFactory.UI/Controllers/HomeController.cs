@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ZhiJuFactory.Core.Dao;
 
 namespace ZhiJuFactory.UI.Controllers
 {
@@ -10,6 +11,8 @@ namespace ZhiJuFactory.UI.Controllers
     {
         public IActionResult Index()
         {
+            CreateClass  cc = new CreateClass();
+            cc.Init();
             return View();
         }
 
