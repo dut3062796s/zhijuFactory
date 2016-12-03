@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Microsoft.Extensions.Configuration;
 namespace ZhiJuFactory.Core.Dao
 {
     public class DbConfig
     {
-        public static string ConnectionString =  ConfigSugar.GetConfigString("DefaultConnection");
+        public static string ConnectionString =  new ConfigurationBuilder().Build().GetConnectionString("DefaultConnection");
         public static Dictionary<string, Func<KeyValueObj>> DefaultFilter = new Dictionary<string, Func<KeyValueObj>>() {
             //单表查询
             { "FalseDelte",()=>{return new KeyValueObj(){ Key=" (isdeleted=0  or isdeleted is null )"};} },
@@ -31,7 +31,7 @@ namespace ZhiJuFactory.Core.Dao
             }
             catch (Exception ex)
             {
-                throw new Exception("连接数据库出错，请检查您的连接字符串，和网络。 ex:".AppendString(ex.Message));
+                throw new Exception("连接数据库出错，请检查您的连接字符串，和网络。 ex:"+ex.Message);
             }
         }
     }

@@ -1,9 +1,13 @@
 {
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;port=3306;Database=test2;Uid=root;Pwd=123456;MinimumPoolSize=20;MaximumPoolsize=200;"
+  },
   "dependencies": {
     "Microsoft.AspNetCore.Razor.Tools": {
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
+
     "BundlerMinifier.Core": "2.2.306",
     "Microsoft.ApplicationInsights.AspNetCore": "1.0.2",
     "Microsoft.AspNetCore.Diagnostics": "1.1.0",
@@ -19,7 +23,8 @@
     "Microsoft.Extensions.Logging.Debug": "1.1.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0",
     "Microsoft.NETCore.App": "1.1.0",
-    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.1.0"
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.1.0",
+    "MySql.Data": "7.0.6-IR31"
   },
 
   "tools": {
@@ -45,6 +50,11 @@
     "configProperties": {
       "System.GC.Server": true
     }
+
+  },
+
+  "runtimes": {
+    "win10-x64": {}
   },
 
   "publishOptions": {
